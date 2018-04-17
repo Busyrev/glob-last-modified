@@ -1,6 +1,6 @@
 {
   "name": "glob-last-modified",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Walks through specified glob pattert or array of patterns and returns last change date of all matched files or directories. Tecnically it is the newest modified or created date of all items in pecified glob pattern",
   "main": "index.js",
   "scripts": {
