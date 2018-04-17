@@ -1,0 +1,31 @@
+{
+  "name": "glob-last-modified",
+  "version": "1.0.0",
+  "description": "Walks through specified glob pattert or array of patterns and returns last change date of all matched files or directories. Tecnically it is the newest modified or created date of all items in pecified glob pattern",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Busyrev/glob-last-modified.git"
+  },
+  "keywords": [
+    "glob",
+    "last-modified",
+    "modified-time",
+    "modified",
+    "date",
+    "node-glob",
+    "node-js"
+  ],
+  "author": "Mikhail Busyrev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Busyrev/glob-last-modified/issues"
+  },
+  "homepage": "https://github.com/Busyrev/glob-last-modified#readme",
+  "dependencies": {
+    "glob": "^7.1.2"
+  }
+}
