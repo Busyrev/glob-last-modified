@@ -8,7 +8,7 @@ module.exports = {
 }
 
 /**
- * Walks through specified glob pattert or array of patterns and returns last change date of all matched files or directories. Tecnically it is the newest modified or created date of all items in pecified glob pattern
+ * Walks through specified glob pattert or array of patterns and returns last change date of all matched files or directories. Tecnically it is the newest modified of all items in specified glob pattern
  * @param {string|Array.<string>} pattern - glob pattern or array of patterns
  * @param {string|Array.<string>} exclude - glob pattern or array of patterns to exclude files
  * @return {number} - fractional number of unix timestamp in MILLISECONDS, 0 if no files matched
@@ -24,7 +24,7 @@ function lastModified(pattern, exclude) {
         
         for (let candidate of paths) {
             let stats = fs.statSync(candidate);
-            latestModifiedDate = Math.max(latestModifiedDate, stats.mtimeMs, stats.ctimeMs, stats.birthtimeMs);
+            latestModifiedDate = Math.max(latestModifiedDate, stats.mtimeMs);
         }
     }
     
@@ -49,8 +49,7 @@ function getModifiedSince(since, pattern, exclude) {
         
         for (let candidate of paths) {
             let stats = fs.statSync(candidate);
-            let latestModifiedDate = Math.max(stats.mtimeMs, stats.ctimeMs, stats.birthtimeMs);
-            if (latestModifiedDate > since) {
+            if (stats.mtimeMs > since) {
                 modified.push(candidate);
             }
         }
